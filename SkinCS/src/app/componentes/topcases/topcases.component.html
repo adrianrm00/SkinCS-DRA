@@ -1,0 +1,6 @@
+<h2>Top Cajas</h2>
+<div class="cases-menu">
+  <a *ngFor="let case of cases" routerLink="/cases/{{case.id}}">
+    {{case.name}}
+  </a>
+</div>

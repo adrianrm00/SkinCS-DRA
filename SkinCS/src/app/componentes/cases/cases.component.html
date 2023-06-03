@@ -1,0 +1,8 @@
+<button class="container-card" *ngFor="let case of cases" routerLink="/cases/{{case.id}}">
+  <img class="card" mat-card-image src="{{case.image}}" alt="Foto caja">
+  <mat-card-header>
+    <mat-card-title>{{case.name}}</mat-card-title>
+  </mat-card-header>
+</button>
+
+

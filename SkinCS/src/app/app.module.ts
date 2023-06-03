@@ -12,10 +12,19 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule} from '@angular/material/card';
 import { MatListModule} from '@angular/material/list';
 
+import { CasesComponent } from './componentes/cases/cases.component';
+import { MessagesComponent } from './componentes/messages/messages.component';
+import { CasesDetailComponent } from './componentes/cases-detail/cases-detail.component';
+import { TopcasesComponent } from './componentes/topcases/topcases.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CasesComponent,
+    MessagesComponent,
+    CasesDetailComponent,
+    TopcasesComponent
   ],
   imports: [
     BrowserModule,

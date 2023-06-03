@@ -1,0 +1,12 @@
+<div *ngIf="case">
+  <h2>{{case.name}}</h2>
+  <div>id: {{case.id}}</div>
+  <div><img class="card" src="{{case.image}}" alt=""></div>
+  <div>
+    <label for="case-name">Case name: </label>
+    <input id="case-name" [(ngModel)]="case.name" placeholder="name">
+  </div>
+</div>
+<div>
+  <button type="button" (click)="goBack()">Volver</button>
+</div>
