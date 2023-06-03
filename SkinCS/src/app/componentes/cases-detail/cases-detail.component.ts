@@ -20,9 +20,12 @@ export class CasesDetailComponent {
   }
 
   getCase(): void {
-    const id = String(this.route.snapshot.paramMap.get('id'));
-    this.caseService.getCase(id)
-      .subscribe(c => this.case = c);
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.caseService.getCaseById(id).subscribe(c => {
+        this.case = c[0];
+      });
+    }
   }
 
   goBack(): void {

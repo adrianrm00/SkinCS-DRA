@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { map, filter} from 'rxjs/operators';
@@ -31,6 +31,14 @@ export class CaseService {
         tap(_ => this.log('fetched cases')),
         catchError(this.handleError<Case[]>('getCase', []))
       );
+  }
+
+  getCaseById(id: string): Observable<Case[]> {
+    const params = new HttpParams().set('id', id);
+    return this.http.get<Case[]>(this.casesUrl, { params })
+      .pipe(
+        map(cases => cases.filter(c => c.id === id)),
+      )
   }
 
   /** GET hero by id. Will 404 if id not found */
