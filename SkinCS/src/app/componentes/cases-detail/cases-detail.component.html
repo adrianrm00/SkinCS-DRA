@@ -24,19 +24,23 @@
 
 
 <div *ngIf="case">
-  <h2>{{ case.name }}</h2>
+  <h1>{{ case.name }}</h1>
   <img [src]="case.image" alt="Foto caja">
 
-  <h3>Armas:</h3>
-  <ul>
-    <li *ngFor="let weapon of weapons">
-      <img [src]="weapon.image" alt="Foto arma">
+  <h2>Armas:</h2>
 
-      <span>{{ weapon.id }} </span>
-      <span>{{ weapon.name }}</span>
-      <span>{{ weapon.rarity }}</span>
-    </li>
-  </ul>
+</div>
+
+<div class="container-card" *ngFor="let weapon of weapons">
+  <img class="card" mat-card-image src="{{weapon.image}}" alt="Foto skin">
+  <mat-card-header>
+    <mat-card-title>{{weapon.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Rareza: {{weapon.rarity}}
+    </p>
+  </mat-card-content>
 </div>
 
 
