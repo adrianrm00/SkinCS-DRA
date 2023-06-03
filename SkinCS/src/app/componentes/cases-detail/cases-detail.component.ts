@@ -45,7 +45,6 @@ export class CasesDetailComponent {
   }
 
   getWeapon(id: string): void {
-
     if (id) {
       this.weaponService.getWeaponById(id).subscribe(w => {
         const weapon = w[0];
@@ -54,7 +53,6 @@ export class CasesDetailComponent {
       });
     }
   }
-
 
   goBack(): void {
     this.location.back();

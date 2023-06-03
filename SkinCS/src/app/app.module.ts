@@ -16,6 +16,7 @@ import { CasesComponent } from './componentes/cases/cases.component';
 import { MessagesComponent } from './componentes/messages/messages.component';
 import { CasesDetailComponent } from './componentes/cases-detail/cases-detail.component';
 import { TopcasesComponent } from './componentes/topcases/topcases.component';
+import { PlaygameComponent } from './componentes/playgame/playgame.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TopcasesComponent } from './componentes/topcases/topcases.component';
     CasesComponent,
     MessagesComponent,
     CasesDetailComponent,
-    TopcasesComponent
+    TopcasesComponent,
+    PlaygameComponent
   ],
   imports: [
     BrowserModule,
