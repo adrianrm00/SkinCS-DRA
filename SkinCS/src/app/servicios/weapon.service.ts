@@ -12,7 +12,7 @@ import { Weapon } from '../weapon';
 @Injectable({
   providedIn: 'root'
 })
-export class CaseService {
+export class WeaponService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
@@ -20,35 +20,25 @@ export class CaseService {
   private weaponUrl = 'https://bymykel.github.io/CSGO-API/api/es-ES/skins.json'; // URL to web api
   private AllItemsUrl = 'https://cs2-api.vercel.app/api/items';  // URL to web api
 
-  /**GET case from the server */
-  getCases(): Observable<Case[]> {
-    const excludeWords = ['grafitis', 'Radicals', 'kits']; // Words to exclude from the list
-
-    return this.http.get<Case[]>(this.casesUrl)
+  /** GET weapon from the server */
+  getWeapons(): Observable<Weapon[]> {
+    return this.http.get<Weapon[]>(this.weaponUrl)
       .pipe(
-        map(cases => cases.filter(cases => cases.name.includes('Caja'))),
-        map(cases => cases.filter(cases => !excludeWords.some(word => cases.name.includes(word)))),
-        tap(_ => this.log('fetched cases')),
-        catchError(this.handleError<Case[]>('getCase', []))
-      );
-  }
-
-  /** GET case by id. Will 404 if id not found */
-  getCaseById(id: string): Observable<Case[]> {
-    const params = new HttpParams().set('id', id);
-    return this.http.get<Case[]>(this.casesUrl, { params })
-      .pipe(
-        map(cases => cases.filter(c => c.id === id)),
-        tap(_ => this.log(`fetched case id=${id}`)),
-        catchError(this.handleError<Case[]>(`getCase id=${id}`, []))
+        tap(_ => this.log('fetched weapons')),
+        catchError(this.handleError<Weapon[]>('getWeapon', []))
       )
   }
 
-
-
-  /** GET  weapon by case.weapon.id*/
-
-
+  /** GET weapon by id. Will 404 if id not found */
+  getWeaponById(id: string): Observable<Weapon[]> {
+    const params = new HttpParams().set('id', id);
+    return this.http.get<Weapon[]>(this.weaponUrl, { params })
+      .pipe(
+        map(weapon => weapon.filter(w => w.id === id)),
+        tap(_ => this.log(`fetched case id=${id}`)),
+        catchError(this.handleError<Weapon[]>(`getCase id=${id}`, []))
+      )
+  }
 
   /**
   * Handle Http operation that failed.
@@ -70,6 +60,5 @@ export class CaseService {
   private log(message: string) {
     this.messageService.add(`CaseService: ${message}`);
   }
-
 
 }

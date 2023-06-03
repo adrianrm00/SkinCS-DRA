@@ -1,3 +1,4 @@
+<!--
 <div *ngIf="case">
   <h2>{{case.name}}</h2>
   <div>id: {{case.id}}</div>
@@ -10,3 +11,50 @@
 <div>
   <button type="button" (click)="goBack()">Volver</button>
 </div>
+
+
+
+<div class="container-card" *ngIf="case">
+  <img class="card" mat-card-image src="{{case.image}}" alt="Foto caja">
+  <mat-card-header>
+    <mat-card-title>{{case.name}}</mat-card-title>
+  </mat-card-header>
+</div>
+-->
+
+
+<div *ngIf="case">
+  <h2>{{ case.name }}</h2>
+  <img [src]="case.image" alt="Foto caja">
+
+  <h3>Armas:</h3>
+  <ul *ngIf="weapon">
+    <li *ngFor="let weapon of case.contains">
+      <img [src]="weapon.image" alt="Foto arma">
+
+      <span>{{ weapon.id }} </span>
+      <span>{{ weapon.name }}</span>
+      <span>{{ weapon.rarity }}</span>
+    </li>
+  </ul>
+</div>
+
+
+
+<!--
+<button class="container-card" *ngFor="let c of cases; let i = index" routerLink="/cases/{{c.weapons[i].image}}">
+  <img class="card" mat-card-image src="{{c.weapons[i].image}}" alt="Foto caja">
+  <mat-card-header>
+    <mat-card-title>{{c.weapons[i].name}}</mat-card-title>
+  </mat-card-header>
+</button>
+
+
+
+  <button class="container-card" *ngFor="let case of cases" routerLink="/cases/{{case.id}}">
+  <img class="card" mat-card-image src="{{case.image}}" alt="Foto caja">
+  <mat-card-header>
+    <mat-card-title>{{case.name}}</mat-card-title>
+  </mat-card-header>
+</button>
+-->
