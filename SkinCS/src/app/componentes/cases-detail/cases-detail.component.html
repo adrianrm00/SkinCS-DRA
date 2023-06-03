@@ -28,8 +28,8 @@
   <img [src]="case.image" alt="Foto caja">
 
   <h3>Armas:</h3>
-  <ul *ngIf="weapon">
-    <li *ngFor="let weapon of case.contains">
+  <ul>
+    <li *ngFor="let weapon of weapons">
       <img [src]="weapon.image" alt="Foto arma">
 
       <span>{{ weapon.id }} </span>

@@ -16,7 +16,7 @@ export class CasesDetailComponent {
 
   @Input() case?: Case;
 
-  weapon: Weapon | undefined;
+  weapons: Weapon[] = [];
 
   constructor( private route: ActivatedRoute, private caseService: CaseService, private location: Location, private messageService: MessageService, private weaponService: WeaponService) { }
 
@@ -45,11 +45,12 @@ export class CasesDetailComponent {
   }
 
   getWeapon(id: string): void {
+
     if (id) {
       this.weaponService.getWeaponById(id).subscribe(w => {
-        this.weapon = w[0];
+        const weapon = w[0];
+        this.weapons.push(weapon);
         console.log('Datos del caso:', this.case);
-
       });
     }
   }
