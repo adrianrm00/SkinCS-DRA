@@ -1,0 +1,30 @@
+<div *ngIf="case">
+  <h1>{{ case.name }}</h1>
+  <img [src]="case.image" alt="Foto caja">
+  <button mat-raised-button color="primary" (click)="getRandomWeapon()">Abrir</button>
+
+  <h2>Armas:</h2>
+
+</div>
+
+<div *ngIf="randomWeapon">
+  <h3>Arma Aleatoria</h3>
+  <img [src]="randomWeapon.image" alt="Foto arma">
+  <p>ID: {{ randomWeapon.id }}</p>
+  <p>Nombre: {{ randomWeapon.name }}</p>
+  <p>Rareza: {{ randomWeapon.rarity }}</p>
+  <button mat-raised-button color="primary" (click)=" deleteRandomWeapon()">Eliminar</button>
+  <button mat-raised-button color="primary">Añadir al inventario</button>
+</div>
+
+<div class="container-card" *ngFor="let weapon of weapons">
+  <img class="card" mat-card-image src="{{weapon.image}}" alt="Foto skin">
+  <mat-card-header>
+    <mat-card-title>{{weapon.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Rareza: {{weapon.rarity}}
+    </p>
+  </mat-card-content>
+</div>
