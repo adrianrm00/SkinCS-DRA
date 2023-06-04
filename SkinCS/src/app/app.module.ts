@@ -19,6 +19,7 @@ import { TopcasesComponent } from './componentes/topcases/topcases.component';
 import { PlaygameComponent } from './componentes/playgame/playgame.component';
 import { PlaygameDetailComponent } from './componentes/playgame-detail/playgame-detail.component';
 import { InventoryComponent } from './componentes/inventory/inventory.component';
+import { InventoryDetailComponent } from './componentes/inventory-detail/inventory-detail.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { InventoryComponent } from './componentes/inventory/inventory.component'
     TopcasesComponent,
     PlaygameComponent,
     PlaygameDetailComponent,
-    InventoryComponent
+    InventoryComponent,
+    InventoryDetailComponent
   ],
   imports: [
     BrowserModule,

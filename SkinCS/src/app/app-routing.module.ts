@@ -6,6 +6,7 @@ import { CasesDetailComponent } from './componentes/cases-detail/cases-detail.co
 import { PlaygameComponent } from './componentes/playgame/playgame.component';
 import { PlaygameDetailComponent } from './componentes/playgame-detail/playgame-detail.component';
 import { InventoryComponent } from './componentes/inventory/inventory.component';
+import { InventoryDetailComponent } from './componentes/inventory-detail/inventory-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/topCases', pathMatch: 'full' },
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path: 'playgame', component: PlaygameComponent},
   {path: 'playgame/:id', component: PlaygameDetailComponent},
   { path: 'inventory', component: InventoryComponent },
-  { path: 'inventory/:id', component: InventoryComponent }
+  { path: 'inventory/:id', component: InventoryDetailComponent }
 
 
 ];

@@ -20,6 +20,8 @@ export class InventoryComponent {
   }
 
   getWeapons(): void {
+    this.inventorySevice.getInventory()
+      .subscribe(weapons => this.weapons = weapons);
   }
 
 }

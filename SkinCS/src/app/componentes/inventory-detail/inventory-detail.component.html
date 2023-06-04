@@ -1,0 +1,25 @@
+<div *ngIf="weapons">
+  <h1>{{ weapons.name }}</h1>
+  <img [src]="weapons.image" alt="Foto caja">
+
+  <h2>Armas:</h2>
+
+</div>
+
+<div class="container-card" *ngIf="weapons">
+  <img class="card" mat-card-image src="{{weapons.image}}" alt="Foto skin">
+  <mat-card-header>
+    <mat-card-title>{{weapons.name}}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      {{weapons.description}}
+    </p>
+    <p>
+      Rareza: {{weapons.rarity}}
+    </p>
+  </mat-card-content>
+  <input id="weapons-name" [(ngModel)]="weapons.name" placeholder="Superpowers">
+  <button type="button" (click)="save()">save</button>
+</div>

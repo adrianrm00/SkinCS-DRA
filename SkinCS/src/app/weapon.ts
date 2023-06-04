@@ -13,5 +13,5 @@ export class Weapon {
     this.weapon = weaponData.weapon;
     this.rarity = weaponData.rarity;
     this.image = weaponData.image;
-}
+  }
 }
