@@ -18,6 +18,7 @@ import { CasesDetailComponent } from './componentes/cases-detail/cases-detail.co
 import { TopcasesComponent } from './componentes/topcases/topcases.component';
 import { PlaygameComponent } from './componentes/playgame/playgame.component';
 import { PlaygameDetailComponent } from './componentes/playgame-detail/playgame-detail.component';
+import { InventoryComponent } from './componentes/inventory/inventory.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { PlaygameDetailComponent } from './componentes/playgame-detail/playgame-
     CasesDetailComponent,
     TopcasesComponent,
     PlaygameComponent,
-    PlaygameDetailComponent
+    PlaygameDetailComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+<h2>Tu inventario</h2>
+<button class="container-card" *ngFor="let weapon of weapons" routerLink="/inventory/{{weapon.id}}">
+  <img class="card" mat-card-image src="{{weapon.image}}" alt="Foto caja">
+  <mat-card-header>
+    <mat-card-title>{{weapon.name}}</mat-card-title>
+  </mat-card-header>
+</button>
