@@ -21,7 +21,7 @@ export class PlaygameDetailComponent {
 
   weapons: Weapon[] = [];
 
-  randomWeapon: Inventory = null as any as Weapon;
+  randomWeapon: Inventory = null as any as Inventory;
 
   constructor( private router: Router, private route: ActivatedRoute, private caseService: CaseService, private location: Location, private messageService: MessageService, private weaponService: WeaponService, private inventoryService: InventoryService) { }
 
@@ -57,11 +57,12 @@ export class PlaygameDetailComponent {
     }
   }
 
-  getRandomWeapon(): Weapon | undefined {
+  getRandomWeapon(): Inventory | undefined {
     if(this.weapons.length > 0) {
       const random = Math.floor(Math.random() * this.weapons.length);
       this.randomWeapon = this.weapons[random];
       console.log('Datos guardados', this.randomWeapon);
+      this.weapons[random].id = null as any as string;
       return this.weapons[random];
     }
     return undefined;
