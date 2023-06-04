@@ -6,6 +6,8 @@ import { Location } from '@angular/common';
 import { MessageService } from 'src/app/servicios/message.service';
 import { WeaponService } from 'src/app/servicios/weapon.service';
 import { Weapon } from 'src/app/weapon';
+import { InventoryService } from 'src/app/servicios/inventory.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-playgame-detail',
@@ -18,9 +20,9 @@ export class PlaygameDetailComponent {
 
   weapons: Weapon[] = [];
 
-  randomWeapon?: Weapon;
+  randomWeapon: Weapon = null as any as Weapon;
 
-  constructor( private route: ActivatedRoute, private caseService: CaseService, private location: Location, private messageService: MessageService, private weaponService: WeaponService) { }
+  constructor( private router: Router, private route: ActivatedRoute, private caseService: CaseService, private location: Location, private messageService: MessageService, private weaponService: WeaponService, private inventoryService: InventoryService) { }
 
   ngOnInit(): void {
     this.getCase();
@@ -66,8 +68,14 @@ export class PlaygameDetailComponent {
     return undefined;
   }
 
+  addRandomWeapon(): void {
+    this.inventoryService.addInventory(this.randomWeapon).subscribe( () => {
+      this.router.navigate(['/inventory']);
+    });
+  }
+
   deleteRandomWeapon(): void {
-    this.randomWeapon = undefined;
+    this.randomWeapon = null as any as Weapon;
   }
 
   goBack(): void {

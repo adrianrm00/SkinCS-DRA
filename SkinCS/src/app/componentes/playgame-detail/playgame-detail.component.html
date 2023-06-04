@@ -14,7 +14,7 @@
   <p>Nombre: {{ randomWeapon.name }}</p>
   <p>Rareza: {{ randomWeapon.rarity }}</p>
   <button mat-raised-button color="primary" (click)=" deleteRandomWeapon()">Eliminar</button>
-  <button mat-raised-button color="primary">Añadir al inventario</button>
+  <button mat-raised-button color="primary" (click)="addRandomWeapon()">Añadir al inventario</button>
 </div>
 
 <div class="container-card" *ngFor="let weapon of weapons">
