@@ -4,6 +4,7 @@ import { MessageService } from './message.service';
 import { Observable, of } from 'rxjs';
 import { Weapon } from '../weapon';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Inventory } from '../inventory';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,7 @@ export class InventoryService {
   }
 
   /** POST: add a new inventory to the server */
-  addInventory(weapon: Weapon): Observable<Weapon> {
+  addInventory(weapon: Inventory): Observable<Weapon> {
     return this.http.post<Weapon>(this.inventoryUrl, weapon, this.httpOptions)
       .pipe(
         tap((newWeapon: Weapon) => this.log(`added weapon w/ id=${newWeapon.id}`)),

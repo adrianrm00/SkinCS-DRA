@@ -8,6 +8,7 @@ import { WeaponService } from 'src/app/servicios/weapon.service';
 import { Weapon } from 'src/app/weapon';
 import { InventoryService } from 'src/app/servicios/inventory.service';
 import { Router } from '@angular/router';
+import { Inventory } from 'src/app/inventory';
 
 @Component({
   selector: 'app-playgame-detail',
@@ -20,7 +21,7 @@ export class PlaygameDetailComponent {
 
   weapons: Weapon[] = [];
 
-  randomWeapon: Weapon = null as any as Weapon;
+  randomWeapon: Inventory = null as any as Weapon;
 
   constructor( private router: Router, private route: ActivatedRoute, private caseService: CaseService, private location: Location, private messageService: MessageService, private weaponService: WeaponService, private inventoryService: InventoryService) { }
 
@@ -36,7 +37,6 @@ export class PlaygameDetailComponent {
     if (id) {
       this.caseService.getCaseById(id).subscribe(c => {
         this.case = c[0];
-        console.log('Datos del caso:', this.case);
         this.loadWeapons();
       });
     }
@@ -53,7 +53,6 @@ export class PlaygameDetailComponent {
       this.weaponService.getWeaponById(id).subscribe(w => {
         const weapon = w[0];
         this.weapons.push(weapon);
-        console.log('Datos del caso:', this.case);
       });
     }
   }
@@ -61,8 +60,8 @@ export class PlaygameDetailComponent {
   getRandomWeapon(): Weapon | undefined {
     if(this.weapons.length > 0) {
       const random = Math.floor(Math.random() * this.weapons.length);
-      console.log('Datos del aleatorio:', this.weapons[random]);
       this.randomWeapon = this.weapons[random];
+      console.log('Datos guardados', this.randomWeapon);
       return this.weapons[random];
     }
     return undefined;

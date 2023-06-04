@@ -10,7 +10,7 @@
 <div *ngIf="randomWeapon">
   <h3>Arma Aleatoria</h3>
   <img [src]="randomWeapon.image" alt="Foto arma">
-  <p>ID: {{ randomWeapon.id }}</p>
+
   <p>Nombre: {{ randomWeapon.name }}</p>
   <p>Rareza: {{ randomWeapon.rarity }}</p>
   <button mat-raised-button color="primary" (click)=" deleteRandomWeapon()">Eliminar</button>
