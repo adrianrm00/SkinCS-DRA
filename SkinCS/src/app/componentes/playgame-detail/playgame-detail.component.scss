@@ -1,0 +1,75 @@
+.containerBox {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.box {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #333;
+}
+
+button {
+  margin-top: 10px;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.container-card {
+  width: 400px;
+  height: 400px;
+}
+
+.divtarjeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  //background-color: black;
+
+}
+
+.container-card{
+  margin: 20px;
+  background: white;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15%;
+}
+
+.textCard {
+  text-align: center;
+}
+
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.actionB{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  content: space-between;
+}
+
+.botonA{
+  margin-right: 10px;
+}
+
+

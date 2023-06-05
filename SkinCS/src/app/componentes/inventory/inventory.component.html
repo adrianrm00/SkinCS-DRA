@@ -1,7 +1,18 @@
-<h2>Tu inventario</h2>
-<button class="container-card" *ngFor="let weapon of weapons" routerLink="/inventory/{{weapon.id}}">
-  <img class="card" mat-card-image src="{{weapon.image}}" alt="Foto caja">
-  <mat-card-header>
-    <mat-card-title>{{weapon.name}}</mat-card-title>
-  </mat-card-header>
-</button>
+<div class="box">
+  <h1 class="title"> Tu inventario</h1>
+</div>
+
+<div class="divtarjeta">
+  <div class="container-card" *ngFor="let weapon of weapons">
+    <div class="card">
+      <img class="image" mat-card-image src="{{weapon.image}}" alt="Foto caja">
+    </div>
+    <mat-card-header class="textCard">
+      <mat-card-title >{{weapon.name}} </mat-card-title>
+      <mat-card-subtitle >{{weapon.rarity}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions class="openButton">
+      <button mat-raised-button color="primary" routerLink="/inventory/{{weapon.id}}">Ver detalles</button>
+    </mat-card-actions>
+  </div>
+</div>

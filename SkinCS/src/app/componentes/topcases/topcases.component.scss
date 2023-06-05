@@ -1,3 +1,16 @@
+.title {
+  font-size: 200 px;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.box {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 .container-card {
   width: 400px;
   height: 400px;
@@ -5,4 +18,14 @@
 
 .example-card, .card {
   max-width: 200px;
+}
+
+.divtarjeta {
+  display: flex;
+  justify-content: center;
+}
+
+.container-card{
+  margin: 20px;
+  background: white
 }

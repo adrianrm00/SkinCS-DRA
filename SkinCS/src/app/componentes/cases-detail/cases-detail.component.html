@@ -1,64 +1,23 @@
-<!--
-<div *ngIf="case">
-  <h2>{{case.name}}</h2>
-  <div>id: {{case.id}}</div>
-  <div><img class="card" src="{{case.image}}" alt=""></div>
+<div *ngIf="case" class="containerBox">
+  <div class="box">
+    <h1 class="title">{{ case.name }}</h1>
+  </div>
   <div>
-    <label for="case-name">Case name: </label>
-    <input id="case-name" [(ngModel)]="case.name" placeholder="name">
+    <img [src]="case.image" alt="Foto caja">
+  </div>
+
+  <h2>Armas</h2>
+
+</div>
+
+<div class="divtarjeta">
+  <div class="container-card" *ngFor="let weapon of weapons">
+    <div class="card">
+      <img class="image" mat-card-image src="{{weapon.image}}" alt="Foto skin">
+    </div>
+    <mat-card-header class="textCard">
+      <mat-card-title>{{weapon.name}} </mat-card-title>
+      <mat-card-subtitle >{{weapon.rarity}}</mat-card-subtitle>
+    </mat-card-header>
   </div>
 </div>
-<div>
-  <button type="button" (click)="goBack()">Volver</button>
-</div>
-
-
-
-<div class="container-card" *ngIf="case">
-  <img class="card" mat-card-image src="{{case.image}}" alt="Foto caja">
-  <mat-card-header>
-    <mat-card-title>{{case.name}}</mat-card-title>
-  </mat-card-header>
-</div>
--->
-
-
-<div *ngIf="case">
-  <h1>{{ case.name }}</h1>
-  <img [src]="case.image" alt="Foto caja">
-
-  <h2>Armas:</h2>
-
-</div>
-
-<div class="container-card" *ngFor="let weapon of weapons">
-  <img class="card" mat-card-image src="{{weapon.image}}" alt="Foto skin">
-  <mat-card-header>
-    <mat-card-title>{{weapon.name}}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      Rareza: {{weapon.rarity}}
-    </p>
-  </mat-card-content>
-</div>
-
-
-
-<!--
-<button class="container-card" *ngFor="let c of cases; let i = index" routerLink="/cases/{{c.weapons[i].image}}">
-  <img class="card" mat-card-image src="{{c.weapons[i].image}}" alt="Foto caja">
-  <mat-card-header>
-    <mat-card-title>{{c.weapons[i].name}}</mat-card-title>
-  </mat-card-header>
-</button>
-
-
-
-  <button class="container-card" *ngFor="let case of cases" routerLink="/cases/{{case.id}}">
-  <img class="card" mat-card-image src="{{case.image}}" alt="Foto caja">
-  <mat-card-header>
-    <mat-card-title>{{case.name}}</mat-card-title>
-  </mat-card-header>
-</button>
--->

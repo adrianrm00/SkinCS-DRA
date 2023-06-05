@@ -1,25 +1,53 @@
-<div *ngIf="weapons">
-  <h1>{{ weapons.name }}</h1>
-  <img [src]="weapons.image" alt="Foto caja">
 
-  <h2>Armas:</h2>
+<div *ngIf="weapons" class="containerBox">
+  <div class="divtarjeta">
+    <div class="box">
+      <mat-card-header>
+        <mat-card-title class="title">{{weapons.name}} </mat-card-title>
+        <mat-card-subtitle>{{weapons.rarity}}</mat-card-subtitle>
+      </mat-card-header>
+    </div>
+    <div class="card">
+      <img class="card" mat-card-image src="{{weapons.image}}" alt="Foto skin">
+    </div>
+    <mat-card-content>
+      <h2>Descripcion:</h2>
+      <p>
+        {{weapons.description}}
+      </p>
+    </mat-card-content>
 
+    <mat-card-actions class="openButton">
+      <button mat-raised-button color="primary" class="delete">Eliminar del Inventario</button>
+    </mat-card-actions>
+    <br>
+    <br>
+    <br>
+    <div class="box">
+      <h1 class="title"> Cambiar Nombre</h1>
+    </div>
+
+    <input id="weapons-name" [(ngModel)]="weapons.name" placeholder="Superpowers">
+    <mat-card-actions class="openButton">
+      <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+    </mat-card-actions>
+
+  </div>
 </div>
 
-<div class="container-card" *ngIf="weapons">
-  <img class="card" mat-card-image src="{{weapons.image}}" alt="Foto skin">
-  <mat-card-header>
-    <mat-card-title>{{weapons.name}}</mat-card-title>
-  </mat-card-header>
 
-  <mat-card-content>
-    <p>
-      {{weapons.description}}
-    </p>
-    <p>
-      Rareza: {{weapons.rarity}}
-    </p>
-  </mat-card-content>
-  <input id="weapons-name" [(ngModel)]="weapons.name" placeholder="Superpowers">
-  <button type="button" (click)="save()">Guardar</button>
-</div>
+<!--
+  <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre del Arma</mat-label>
+        <input matInput placeholder="BRUHHH" [(ngModel)]="weapons.name" [value]="weapons.name">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+    </form>
+    <br>
+    <br>
+    <br>
+-->
+
+
+

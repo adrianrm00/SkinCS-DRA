@@ -1,9 +1,18 @@
-<div class="container-card" *ngFor="let case of cases">
-  <img class="card" mat-card-image src="{{case.image}}" alt="Foto caja">
-  <mat-card-header>
-    <mat-card-title>{{case.name}}</mat-card-title>
-  </mat-card-header>
-  <mat-card-actions>
-    <button mat-button routerLink="/playgame/{{case.id}}">Abrir</button>
-  </mat-card-actions>
+<div class="box">
+  <h1 class="title"> Cajas para Abrir</h1>
+</div>
+
+<div class="divtarjeta">
+  <div class="container-card" *ngFor="let case of cases">
+    <div class="card">
+      <img mat-card-image src="{{case.image}}" alt="Foto caja">
+    </div>
+
+    <mat-card-header class="textCard">
+      <mat-card-title >{{case.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions class="openButton">
+      <button mat-raised-button color="primary" routerLink="/playgame/{{case.id}}">Abrir</button>
+    </mat-card-actions>
+  </div>
 </div>

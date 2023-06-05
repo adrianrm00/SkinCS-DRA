@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { WeaponService } from 'src/app/servicios/weapon.service';
 import { Weapon } from 'src/app/weapon';
 import { InventoryService } from 'src/app/servicios/inventory.service';
+import { Inventory } from 'src/app/inventory';
 
 @Component({
   selector: 'app-inventory-detail',
@@ -14,7 +15,7 @@ import { InventoryService } from 'src/app/servicios/inventory.service';
 })
 export class InventoryDetailComponent {
 
-  weapons: Weapon | undefined
+  weapons: Inventory | undefined;
 
   constructor( private route: ActivatedRoute, private inventoryService: InventoryService, private location: Location, private messageService: MessageService, private weaponService: WeaponService) { }
 
@@ -34,6 +35,9 @@ export class InventoryDetailComponent {
         .subscribe(() => this.goBack());
     }
   }
+
+
+
 
   goBack(): void {
     this.location.back();

@@ -38,10 +38,10 @@ export class InventoryService {
   }
 
   /** PUT: update the inventory on the server */
-  updateInventory(weapon: Weapon): Observable<any> {
+  updateInventory(weapon: Inventory): Observable<any> {
     return this.http.put(this.inventoryUrl, weapon, this.httpOptions)
       .pipe(
-        tap(_ => this.log(`updated weapon id=${weapon.id}`)),
+        tap(_ => this.log(`updated weapon id=${weapon.name}`)),
         catchError(this.handleError<any>('updateWeapon'))
       );
   }
@@ -56,7 +56,6 @@ export class InventoryService {
   }
 
   /** DELETE: delete the inventory from the server */
-
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

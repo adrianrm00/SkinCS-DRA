@@ -1,30 +1,39 @@
-<div *ngIf="case">
-  <h1>{{ case.name }}</h1>
-  <img [src]="case.image" alt="Foto caja">
+<div *ngIf="case" class="containerBox">
+  <div class="box">
+    <h1 class="title">{{ case.name }}</h1>
+  </div>
+  <div>
+    <img [src]="case.image" alt="Foto caja">
+  </div>
   <button mat-raised-button color="primary" (click)="getRandomWeapon()">Abrir</button>
-
-  <h2>Armas:</h2>
-
 </div>
 
-<div *ngIf="randomWeapon">
-  <h3>Arma Aleatoria</h3>
-  <img [src]="randomWeapon.image" alt="Foto arma">
+<div *ngIf="randomWeapon" class="divtarjeta">
+  <div class="container-card">
+    <div class="card">
+      <img class="image" [src]="randomWeapon.image" alt="Foto arma">
+    </div>
 
-  <p>Nombre: {{ randomWeapon.name }}</p>
-  <p>Rareza: {{ randomWeapon.rarity }}</p>
-  <button mat-raised-button color="primary" (click)=" deleteRandomWeapon()">Eliminar</button>
-  <button mat-raised-button color="primary" (click)="addRandomWeapon()">Añadir al inventario</button>
+    <mat-card-header class="textCard">
+      <mat-card-title >{{randomWeapon.name}} </mat-card-title>
+      <mat-card-subtitle >{{randomWeapon.rarity}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions class="actionB">
+      <button class="botonA" mat-raised-button color="primary" (click)=" deleteRandomWeapon()">Eliminar</button>
+      <button mat-raised-button color="primary" (click)="addRandomWeapon()">Añadir al inventario</button>
+    </mat-card-actions>
+  </div>
 </div>
 
-<div class="container-card" *ngFor="let weapon of weapons">
-  <img class="card" mat-card-image src="{{weapon.image}}" alt="Foto skin">
-  <mat-card-header>
-    <mat-card-title>{{weapon.name}}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      Rareza: {{weapon.rarity}}
-    </p>
-  </mat-card-content>
+<div class="divtarjeta">
+  <div class="container-card" *ngFor="let weapon of weapons">
+    <div class="card">
+      <img class="image" mat-card-image src="{{weapon.image}}" alt="Foto caja">
+    </div>
+
+    <mat-card-header class="textCard">
+      <mat-card-title >{{weapon.name}} </mat-card-title>
+      <mat-card-subtitle >{{weapon.rarity}}</mat-card-subtitle>
+    </mat-card-header>
+  </div>
 </div>

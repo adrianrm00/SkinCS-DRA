@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule} from '@angular/material/card';
 import { MatListModule} from '@angular/material/list';
+import { MatInputModule} from '@angular/material/input';
 
 import { CasesComponent } from './componentes/cases/cases.component';
 import { MessagesComponent } from './componentes/messages/messages.component';
@@ -20,6 +21,7 @@ import { PlaygameComponent } from './componentes/playgame/playgame.component';
 import { PlaygameDetailComponent } from './componentes/playgame-detail/playgame-detail.component';
 import { InventoryComponent } from './componentes/inventory/inventory.component';
 import { InventoryDetailComponent } from './componentes/inventory-detail/inventory-detail.component';
+
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { InventoryDetailComponent } from './componentes/inventory-detail/invento
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

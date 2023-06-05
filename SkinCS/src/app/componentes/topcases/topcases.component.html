@@ -1,12 +1,12 @@
-<h1>Top Cajas</h1>
+<div class="box">
+  <h1 class="title">Top Cajas</h1>
+</div>
 
-
-
-
-<button class="container-card" *ngFor="let case of cases" routerLink="/cases/{{case.id}}">
-  <img class="card" mat-card-image src="{{case.image}}" alt="Foto caja">
-  <mat-card-header>
-    <mat-card-title>{{case.name}}</mat-card-title>
-  </mat-card-header>
-</button>
-
+<div class="divtarjeta">
+  <button class="container-card" *ngFor="let case of cases" routerLink="/cases/{{case.id}}">
+    <img class="card" mat-card-image src="{{case.image}}" alt="Foto caja">
+    <mat-card-header>
+      <mat-card-title>{{case.name}}</mat-card-title>
+    </mat-card-header>
+  </button>
+</div>
