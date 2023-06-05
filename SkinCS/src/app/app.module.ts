@@ -21,6 +21,7 @@ import { PlaygameComponent } from './componentes/playgame/playgame.component';
 import { PlaygameDetailComponent } from './componentes/playgame-detail/playgame-detail.component';
 import { InventoryComponent } from './componentes/inventory/inventory.component';
 import { InventoryDetailComponent } from './componentes/inventory-detail/inventory-detail.component';
+import { ScrappingComponent } from './componentes/scrapping/scrapping.component';
 
 
 
@@ -34,7 +35,8 @@ import { InventoryDetailComponent } from './componentes/inventory-detail/invento
     PlaygameComponent,
     PlaygameDetailComponent,
     InventoryComponent,
-    InventoryDetailComponent
+    InventoryDetailComponent,
+    ScrappingComponent
   ],
   imports: [
     BrowserModule,
