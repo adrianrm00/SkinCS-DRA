@@ -49,7 +49,7 @@ public class InventoryController {
         return ResponseEntity.ok(createdInventory);
     }
 
-    @PutMapping("/inventories/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Inventory> updateInventory(@PathVariable Long id, @RequestBody Inventory updatedInventory) {
         Inventory existingInventory = inventoryService.findById(id);
         if (existingInventory == null) {

@@ -38,13 +38,15 @@ export class InventoryService {
   }
 
   /** PUT: update the inventory on the server */
-  updateInventory(weapon: Inventory): Observable<any> {
-    return this.http.put(this.inventoryUrl, weapon, this.httpOptions)
+  updateInventory(weapon: Inventory, id: Number): Observable<any> {
+    const url = `${this.inventoryUrl}/${id}`;
+    return this.http.put(url, weapon, this.httpOptions)
       .pipe(
         tap(_ => this.log(`updated weapon id=${weapon.name}`)),
         catchError(this.handleError<any>('updateWeapon'))
       );
   }
+
 
   /** POST: add a new inventory to the server */
   addInventory(weapon: Inventory): Observable<Weapon> {

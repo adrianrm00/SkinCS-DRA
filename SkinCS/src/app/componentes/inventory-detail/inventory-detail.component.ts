@@ -30,8 +30,9 @@ export class InventoryDetailComponent {
   }
 
   save() : void{
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     if (this.weapons) {
-      this.inventoryService.updateInventory(this.weapons)
+      this.inventoryService.updateInventory(this.weapons, id)
         .subscribe(() => this.goBack());
     }
   }
