@@ -58,6 +58,14 @@ export class InventoryService {
   }
 
   /** DELETE: delete the inventory from the server */
+  deleteW(id: number): Observable<Inventory> {
+    const url = `${this.inventoryUrl}/${id}`;
+
+    return this.http.delete<Inventory>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted Weapon id=${id}`)),
+      catchError(this.handleError<Inventory>('deletewEApon'))
+    );
+  }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

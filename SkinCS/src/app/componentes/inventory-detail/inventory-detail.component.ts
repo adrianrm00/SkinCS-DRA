@@ -7,6 +7,7 @@ import { WeaponService } from 'src/app/servicios/weapon.service';
 import { Weapon } from 'src/app/weapon';
 import { InventoryService } from 'src/app/servicios/inventory.service';
 import { Inventory } from 'src/app/inventory';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inventory-detail',
@@ -17,7 +18,7 @@ export class InventoryDetailComponent {
 
   weapons: Inventory | undefined;
 
-  constructor( private route: ActivatedRoute, private inventoryService: InventoryService, private location: Location, private messageService: MessageService, private weaponService: WeaponService) { }
+  constructor( private router: Router, private route: ActivatedRoute, private inventoryService: InventoryService, private location: Location, private messageService: MessageService, private weaponService: WeaponService) { }
 
   ngOnInit(): void {
     this.getWeapon()
@@ -37,8 +38,12 @@ export class InventoryDetailComponent {
     }
   }
 
+  delete(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.inventoryService.deleteW(id).subscribe();
+    this.router.navigate(['/inventory']);
 
-
+  }
 
   goBack(): void {
     this.location.back();

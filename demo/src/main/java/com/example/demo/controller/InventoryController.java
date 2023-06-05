@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,11 +56,19 @@ public class InventoryController {
         if (existingInventory == null) {
             return ResponseEntity.notFound().build();
         }
-        
-        existingInventory.setName(updatedInventory.getName());
-        
+        existingInventory.setName(updatedInventory.getName());   
         Inventory updated = inventoryService.save(existingInventory);
         return ResponseEntity.ok(updated);
     }   
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Inventory> deleteInventory(@PathVariable Long id) {
+        Inventory existingInventory = inventoryService.findById(id);
+        if (existingInventory == null) {
+            return ResponseEntity.notFound().build();
+        }
+        inventoryService.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
     
 }
