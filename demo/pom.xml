@@ -16,6 +16,12 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	<repositories>
+        <repository>
+            <id>OSS</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
 	<dependencies>
 		<dependency>
 			<groupId>com.microsoft.playwright</groupId>
